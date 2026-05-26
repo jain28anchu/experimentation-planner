@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experimentation Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="container">
+
+  <h1>Experimentation Planner</h1>
+
+  <p class="subtitle">
+    Build structured A/B testing plans with hypotheses, success metrics, guardrails, rollout logic, leadership questions, and launch recommendations.
+  </p>
+
+  <div class="card">
+    <div class="input-group">
+      <label>Feature / Initiative *</label>
+      <input type="text" id="feature" placeholder="Example: AI onboarding assistant" />
+    </div>
+
+    <div class="input-group">
+      <label>Primary Goal *</label>
+      <select id="goal">
+        <option value="">Select Goal</option>
+        <option>User Activation</option>
+        <option>Retention</option>
+        <option>Conversion</option>
+        <option>Revenue Growth</option>
+        <option>Feature Adoption</option>
+        <option>User Engagement</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>User Segment</label>
+      <select id="segment">
+        <option value="">Leave blank for recommendation</option>
+        <option>New Users</option>
+        <option>Power Users</option>
+        <option>Enterprise Customers</option>
+        <option>Free Users</option>
+        <option>Premium Users</option>
+        <option>At-Risk Users</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Experiment Type</label>
+      <select id="experimentType">
+        <option value="">Leave blank for recommendation</option>
+        <option>A/B Test</option>
+        <option>Multivariate Test</option>
+        <option>Pricing Experiment</option>
+        <option>Onboarding Experiment</option>
+        <option>Feature Rollout</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Risk Level</label>
+      <select id="risk">
+        <option value="">Leave blank for recommendation</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Confidence Level</label>
+      <select id="confidence">
+        <option value="">Leave blank for recommendation</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Current Performance</label>
+      <input type="text" id="baseline" placeholder="Optional — leave blank to auto-generate" />
+    </div>
+
+    <div class="input-group">
+      <label>Target Outcome</label>
+      <input type="text" id="lift" placeholder="Optional — leave blank to auto-generate" />
+    </div>
+
+    <div class="button-row">
+      <button onclick="generatePlan()">Generate Experiment Plan</button>
+      <button class="secondary-btn" onclick="generatePlan()">Generate Another Plan</button>
+      <button class="secondary-btn" onclick="copyOutput()">Copy Output</button>
+      <button class="secondary-btn" onclick="downloadText()">Download TXT</button>
+    </div>
+  </div>
+
+  <div class="output-card">
+    <div id="output" class="output-placeholder">
+      Your experiment plan will appear here.
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
